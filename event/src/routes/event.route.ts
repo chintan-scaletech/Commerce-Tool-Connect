@@ -7,7 +7,7 @@ import CustomError from '../errors/custom.error';
 const eventRouter: Router = Router();
 
 eventRouter.post('/', async (request: Request, response: Response) => {
-  logger.info('Event message received');
+  logger.info('Event received');
   // Check request body
   if (!request.body) {
     logger.error('Missing request body.');
