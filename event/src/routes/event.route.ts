@@ -24,8 +24,10 @@ eventRouter.post('/', async (request: Request, response: Response) => {
     Buffer.from(request.body.message.data, 'base64').toString('utf8').trim()
   ).data;
 
+  logger.info('payload', payload);
+
   response.status(200);
-  response.send(payload);
+  response.send();
 });
 
 export default eventRouter;
