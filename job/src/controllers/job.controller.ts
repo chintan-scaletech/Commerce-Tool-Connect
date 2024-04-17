@@ -15,7 +15,7 @@ export const post = async (_request: Request, response: Response) => {
   try {
     // Get the orders
     const limitedOrdersObject = await allOrders({ sort: ['lastModifiedAt'] });
-    logger.info(`There are ${limitedOrdersObject.total} orders!`);
+    logger.info(`There are only ${limitedOrdersObject.total} orders!`);
 
     response.status(200).send();
   } catch (error) {
