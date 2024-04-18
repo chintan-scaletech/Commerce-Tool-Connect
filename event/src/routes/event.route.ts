@@ -5,7 +5,11 @@ import { logger } from '../utils/logger.utils';
 const eventRouter: Router = Router();
 
 eventRouter.post('/', async (request: Request, response: Response) => {
-  logger.info('Event received', request.body);
+  logger.info('request.body', request.body);
+  logger.info('request.body.data', request.body.data);
+
+  const event = request.body;
+  console.info('New event received', event);
 
   response.status(200);
   response.send();
